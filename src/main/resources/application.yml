@@ -1,0 +1,76 @@
+## active profile development
+spring:
+  profiles:
+    active:
+    - test
+
+---
+## define profiles: dev, test, prod
+
+## profile dev
+spring:
+  ## config profile name
+  profiles:
+  - dev
+  ## config data source ##
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/jasper_report_java_techie_db
+    username: root
+    password: Singapore12#
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate: 
+        dialect: org.hibernate.dialect.MySQL5Dialect
+           
+## Config Server ##            
+server:
+  port: 9090 
+  
+---
+## profile test
+spring:
+  ## config profile name
+  profiles: 
+  - test
+  ## config data source ##
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/jasper_report_java_techie_db
+    username: root
+    password: Singapore12#
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate: 
+        dialect: org.hibernate.dialect.MySQL5Dialect
+server:
+  port: 8080
+  
+---
+## profile prod
+spring:
+  ## config profile name
+  profiles: 
+  - prod
+  ## config data source ##
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/jasper_report_java_techie_db
+    username: root
+    password: Singapore12#
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate: 
+        dialect: org.hibernate.dialect.MySQL5Dialect
+server:
+  port: 8082              
+        
